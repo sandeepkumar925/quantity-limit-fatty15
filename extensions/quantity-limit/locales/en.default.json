@@ -1,0 +1,4 @@
+{
+  "name": "Quantity limit per order",
+  "description": "Blocks checkout when a product's total quantity is above its quantity.max metafield."
+}

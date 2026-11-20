@@ -1,0 +1,65 @@
+{
+  "payload": {
+    "export": "cart-validations-generate-run",
+    "target": "cart.validations.generate.run",
+    "input": {
+      "buyerJourney": {
+        "step": "CHECKOUT_COMPLETION"
+      },
+      "localization": {
+        "language": {
+          "isoCode": "EN"
+        }
+      },
+      "shop": {
+        "messages": null
+      },
+      "cart": {
+        "lines": [
+          {
+            "quantity": 5,
+            "merchandise": {
+              "product": {
+                "id": "gid://shopify/Product/10422023684354",
+                "title": "90-Day Starter Kit with Orange Tin",
+                "quantityMax": {
+                  "value": "4"
+                }
+              }
+            }
+          },
+          {
+            "quantity": 3,
+            "merchandise": {
+              "product": {
+                "id": "gid://shopify/Product/2",
+                "title": "Fatty15 Gummies for Adults",
+                "quantityMax": {
+                  "value": "2"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "validationAdd": {
+            "errors": [
+              {
+                "message": "90-Day Starter Kit with Orange Tin: Limit 4 per order on this offer.",
+                "target": "$.cart"
+              },
+              {
+                "message": "Fatty15 Gummies for Adults: Limit 2 per order on this offer.",
+                "target": "$.cart"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

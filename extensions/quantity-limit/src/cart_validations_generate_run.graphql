@@ -1,0 +1,32 @@
+query CartValidationsGenerateRunInput {
+  buyerJourney {
+    step
+  }
+  localization {
+    language {
+      isoCode
+    }
+  }
+  # Messages edited on the app page (Apps > quantity-limit): { "en": "...", "fr": "..." }
+  shop {
+    messages: metafield(namespace: "$app:quantity-limit", key: "messages") {
+      jsonValue
+    }
+  }
+  cart {
+    lines {
+      quantity
+      merchandise {
+        ... on ProductVariant {
+          product {
+            id
+            title
+            quantityMax: metafield(namespace: "quantity", key: "max") {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "payload": {
+    "export": "cart-validations-generate-run",
+    "target": "cart.validations.generate.run",
+    "input": {
+      "buyerJourney": {
+        "step": "CART_INTERACTION"
+      },
+      "localization": {
+        "language": {
+          "isoCode": "EN"
+        }
+      },
+      "shop": {
+        "messages": null
+      },
+      "cart": {
+        "lines": [
+          {
+            "quantity": 9,
+            "merchandise": {
+              "product": {
+                "id": "gid://shopify/Product/10422023684354",
+                "title": "90-Day Starter Kit with Orange Tin",
+                "quantityMax": {
+                  "value": "4"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "validationAdd": {
+            "errors": []
+          }
+        }
+      ]
+    }
+  }
+}

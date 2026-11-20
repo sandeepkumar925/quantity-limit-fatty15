@@ -1,0 +1,25 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "6ae9b71f52aba9fec19bd0edaa8e817b"
+application_url = "https://shopify.dev/apps/default-app-home"
+embedded = true
+name = "quantity-limit"
+
+[webhooks]
+api_version = "2027-01"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+# read_locales: the app page lists the store's languages to edit a message for each.
+scopes = "read_locales"
+
+# The app page (extensions/app-home) calls the Admin API directly.
+[access.admin]
+direct_api_mode = "online"
+embedded_app_direct_api_access = true
+
+[auth]
+redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
+
+[build]
+automatically_update_urls_on_dev = true
